@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <!-- external -->
@@ -34,6 +34,11 @@ Feel free to alter this code to your liking, but please do not re-host it, do no
 
 <meta name="viewport" content="width=900, initial-scale=1">
 <link rel="shortcut icon" href="img/favicon.ico" />
+
+<!-- PWA manifest and theme color -->
+<link rel="manifest" href="/manifest.json" />
+<meta name="theme-color" content="#d2691e" />
+
 <script src="base64.js"></script>
 
 <script>
@@ -65,6 +70,11 @@ var App=typeof App==='undefined'?0:App;
 <!--[if lt IE9]><script src="excanvas.compiled.js"></script><![endif]-->
 </head>
 <body>
+
+<!-- PWA install button -->
+<button id="install-button" style="display:none; position: fixed; top: 1rem; right: 1rem; z-index: 1000;">
+  Install Cookie Clicker
+</button>
 
 <div id="wrapper">
 
@@ -269,6 +279,9 @@ var App=typeof App==='undefined'?0:App;
 	</div>
 
 </div>
+
+<!-- Register PWA service worker and install logic -->
+<script src="/pwa.js"></script>
 
 </body>
 </html>
